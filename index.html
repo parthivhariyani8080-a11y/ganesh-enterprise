@@ -3,58 +3,1616 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganesh Enterprise | Ganesh Online</title>
+<title>ગણેશ એન્ટરપ્રાઇઝ | ડિજિટલ સેવા કેન્દ્ર</title>
+<meta name="description" content="ગણેશ એન્ટરપ્રાઇઝ - આધાર, પાન કાર્ડ, વ્હાલી દીકરી યોજના, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન અને ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી ફોર્મ.">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background:#f7f8fb;color:#172033;line-height:1.6}
-header{background:#071b3d;color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0002}
-.nav{max-width:1100px;margin:auto;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{height:58px;width:auto;border-radius:8px;background:#fff}.brand{font-weight:800;font-size:20px;color:#f5c542}
-nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:600}
-.hero{background:linear-gradient(135deg,#071b3d,#123f78);color:#fff;text-align:center;padding:70px 20px}
-.hero h1{font-size:44px;margin-bottom:10px;color:#f5c542}.hero p{font-size:20px}
-.btn{display:inline-block;background:#f5c542;color:#071b3d;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:800;margin:18px 6px 0}
-section{max-width:1100px;margin:auto;padding:55px 18px}.title{text-align:center;font-size:32px;margin-bottom:30px;color:#071b3d}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:#fff;padding:22px;border-radius:14px;box-shadow:0 5px 20px #00000012;border-top:4px solid #f5c542}.card h3{color:#071b3d;margin-bottom:8px}
-.card ul{padding-left:20px}.office{background:#071b3d;color:#fff;border-radius:14px;padding:25px}.office h3{color:#f5c542}.office a{color:#fff}
-footer{background:#071b3d;color:#fff;text-align:center;padding:25px}
-.back{position:fixed;bottom:20px;left:20px;background:#071b3d;color:#fff;border:0;padding:11px 16px;border-radius:30px;font-weight:bold;box-shadow:0 3px 12px #0004;cursor:pointer;z-index:20}
-@media(max-width:700px){nav{display:none}.hero h1{font-size:34px}.nav{justify-content:center}.brand{font-size:17px}}
+:root {
+    --primary: #102c52;
+    --secondary: #164e86;
+    --blue-gradient: linear-gradient(135deg, #1e60d5 0%, #0d47a1 100%);
+    --gold-gradient: linear-gradient(135deg, #e5b95f 0%, #c49632 100%);
+    --green-gradient: linear-gradient(135deg, #209653 0%, #13733b 100%);
+    --gold: #d6ad55;
+    --green: #16834a;
+    --light: #f4f7fb;
+    --white: #ffffff;
+    --text: #253247;
+    --border: #dce4ee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "Noto Sans Gujarati", "Shruti", Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.8;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+.topbar {
+    background: var(--primary);
+    color: white;
+    padding: 9px 0;
+    font-size: 13px;
+}
+
+.topbar .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 18px rgba(16, 44, 82, 0.08);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.brand img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.brand h1 {
+    color: var(--primary);
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #68778b;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.nav-inquiry {
+    background: var(--blue-gradient);
+    color: white !important;
+    padding: 9px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.25);
+    transition: all .25s ease;
+}
+
+.nav-inquiry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(13, 71, 161, 0.35);
+}
+
+.hero {
+    background:
+        radial-gradient(circle at 80% 20%, #285d9138, transparent 35%),
+        linear-gradient(130deg, #0b1f3b, #123e70);
+    color: white;
+    padding: 75px 0;
+    text-align: center;
+}
+
+.hero-label {
+    display: inline-block;
+    border: 1px solid #d6ad5577;
+    color: #ffdb8c;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.hero h2 {
+    font-size: clamp(28px, 5vw, 46px);
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.hero h2 span {
+    color: #ffdb8c;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: auto;
+    color: #e1eaf6;
+    font-size: 16px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+/* Professional Styled Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all .25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn:hover {
+    transform: translateY(-2.5px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary { 
+    background: linear-gradient(135deg, #1a4175 0%, #102c52 100%); 
+    color: white; 
+}
+
+.btn-blue { 
+    background: var(--blue-gradient); 
+    color: white; 
+    box-shadow: 0 4px 14px rgba(30, 96, 213, 0.28);
+}
+
+.btn-blue:hover {
+    box-shadow: 0 8px 20px rgba(30, 96, 213, 0.4);
+}
+
+.btn-gold { 
+    background: var(--gold-gradient); 
+    color: #121c2d; 
+    box-shadow: 0 4px 14px rgba(214, 173, 85, 0.3);
+}
+
+.btn-light { 
+    background: #edf2f9; 
+    color: var(--primary); 
+    border: 1px solid #d4e0ef;
+    box-shadow: none;
+}
+
+.btn-light:hover {
+    background: #e2eaf5;
+    border-color: #bccfe6;
+}
+
+.section { padding: 55px 0; }
+.section-white { background: white; }
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    color: var(--primary);
+    font-size: clamp(23px, 4vw, 32px);
+}
+
+.section-heading p {
+    color: #69778a;
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+.about-box {
+    background: linear-gradient(135deg, #ffffff, #f0f6ff);
+    border: 1px solid #c9dcfa;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 20px rgba(16, 44, 82, 0.05);
+}
+
+.about-box h3 {
+    color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-box p {
+    font-size: 14px;
+    color: #43556d;
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.about-item {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid #1e60d5;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.notice {
+    background: #fff8e8;
+    border: 1px solid #f0d9a5;
+    padding: 13px 16px;
+    border-radius: 9px;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 22px;
+    box-shadow: 0 4px 14px rgba(16, 44, 82, 0.05);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(16, 44, 82, 0.12);
+    border-color: #1e60d5;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #65748a;
+    margin-bottom: 12px;
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.card li {
+    font-size: 13px;
+    padding: 4px 0;
+}
+
+.card li::before {
+    content: "✓ ";
+    color: var(--green);
+    font-weight: bold;
+}
+
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.card-actions .btn {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 12px;
+}
+
+.loan-note {
+    font-size: 12px;
+    color: #69778a;
+    background: #f5f8fc;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.vacancy-table-wrap {
+    overflow-x: auto;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.badge-live { background: #d9f6e5; color: #137541; }
+.badge-upcoming { background: #fff0cb; color: #805600; }
+
+.table-btn-group {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.benefit {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-4px);
+}
+
+.benefit strong {
+    display: block;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.benefit span {
+    font-size: 12px;
+    color: #69778a;
+}
+
+footer {
+    background: #091b32;
+    color: white;
+    padding: 40px 0 18px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.8fr;
+    gap: 25px;
+}
+
+footer h3 {
+    color: #ffdb8c;
+    margin-bottom: 10px;
+}
+
+footer p, footer a {
+    font-size: 13px;
+    color: #d4deea;
+    overflow-wrap: anywhere;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.branch-box {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.branch-box:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.branch-title {
+    color: #ffdb8c;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ffffff20;
+    margin-top: 25px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #c4cfdd;
+}
+
+/* MODAL / POPUP */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(7, 22, 41, 0.74);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(520px, 100%);
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 20px 70px rgba(0,0,0,0.3);
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalPop 0.25s ease-out;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-header h3 {
+    color: var(--primary);
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.close-btn {
+    background: #eef2f7;
+    border: none;
+    border-radius: 7px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-bottom-back {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.modal-back-btn {
+    background: #f1f4f8;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    justify-content: center;
+    transition: all .2s;
+}
+
+.modal-back-btn:hover {
+    background: #e2e9f3;
+}
+
+.doc-list {
+    list-style: none;
+    margin: 14px 0 22px;
+}
+
+.doc-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 14px;
+}
+
+.doc-list li::before {
+    content: "✓ ";
+    color: var(--green);
+    font-weight: bold;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    border: 1px solid #ccd6e2;
+    border-radius: 8px;
+    padding: 11px 12px;
+    outline: none;
+    background: white;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1e60d5;
+    box-shadow: 0 0 0 3px rgba(30, 96, 213, 0.15);
+}
+
+.validation-error {
+    color: #d32f2f;
+    font-size: 11px;
+    margin-top: 4px;
+    display: none;
+    font-weight: 600;
+}
+
+.form-hint {
+    font-size: 12px;
+    color: #68778b;
+    margin-bottom: 15px;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    background: var(--blue-gradient);
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(30, 96, 213, 0.3);
+    transition: all .25s ease;
+}
+
+.whatsapp-btn:hover {
+    box-shadow: 0 7px 20px rgba(30, 96, 213, 0.45);
+    transform: translateY(-2px);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .about-features { grid-template-columns: 1fr; }
+    .benefits { grid-template-columns: repeat(2, 1fr); }
+    .navbar { align-items: flex-start; flex-direction: column; }
+    .nav-links { gap: 12px; }
+    .footer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .benefits { grid-template-columns: repeat(2, 1fr); }
+    .section { padding: 38px 0; }
+    .hero { padding: 50px 0; }
+    .brand h1 { font-size: 20px; }
+    .brand img { width: 55px; height: 55px; }
+}
 </style>
 </head>
 <body>
-<header><div class="nav">
-<img class="logo" src="logo.jpg" alt="Ganesh Enterprise Logo">
-<div class="brand">GANESH ENTERPRISE</div>
-<nav><a href="#home">Home</a><a href="#services">Services</a><a href="#students">Students</a><a href="#offices">Contact</a></nav>
-</div></header>
 
-<main id="home">
-<section class="hero">
-<h1>GANESH ENTERPRISE</h1>
-<p>Online • Government • Documentation • Loan & Business Services</p>
-<a class="btn" href="tel:7096808048">Call Rajula</a>
-<a class="btn" href="https://wa.me/917359404344">WhatsApp</a>
+<!-- TOPBAR -->
+<div class="topbar">
+    <div class="container">
+        <span>📍 રાજુલા: દાનદેવ કોમ્પલેક્ષ | મહુવા: પંચવટી કોમ્પલેક્ષ</span>
+        <span>📞 રાજુલા: 9313471255 / 7096808048 | મહુવા: 7359404344 / 9081587886</span>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="container navbar">
+        <a href="#home" class="brand">
+            <img src="ganesh-logo.png" alt="Ganesh Enterprise Logo" onerror="this.style.display='none'">
+            <div>
+                <h1>ગણેશ એન્ટરપ્રાઇઝ</h1>
+                <p>સમૃદ્ધિ | પ્રામાણિકતા | નવીનતા</p>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#about">અમારા વિશે</a>
+            <a href="#vacancies">ભરતી</a>
+            <a href="#aadhaar">આધાર-PAN</a>
+            <a href="#yojna">દીકરી યોજના</a>
+            <a href="#vehicle">વાહન લોન & વીમો</a>
+            <a href="#student">વિદ્યાર્થી</a>
+            <a href="#loans">લોન અને ક્રેડિટ કાર્ડ</a>
+            <a href="#farmer">ખેડૂત સુવિધા</a>
+            <a href="#business">MSME & GST</a>
+            <a href="#inquiry" class="nav-inquiry" onclick="openInquiry('સામાન્ય પૂછપરછ')">Inquiry</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="container">
+        <span class="hero-label">તમારી વિશ્વસનીય ડિજિટલ સેવા</span>
+        <h2>ગણેશ એન્ટરપ્રાઇઝ<br><span>ડિજિટલ સેવા કેન્દ્ર</span></h2>
+        <p>રાજુલા અને મહુવામાં આધાર-PAN, વ્હાલી દીકરી યોજના, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ, વ્હીકલ લોન & ઇન્સ્યોરન્સ, સરકારી યોજનાઓ અને વિદ્યાર્થી સેવાઓ માટેનું અગ્રેસર કેન્દ્ર.</p>
+        <div class="hero-buttons">
+            <a href="#vacancies" class="btn btn-gold">📢 સરકારી ભરતી જુઓ</a>
+            <button class="btn btn-blue" onclick="openInquiry('સામાન્ય પૂછપરછ')">💬 Inquiry કરો</button>
+        </div>
+    </div>
 </section>
 
-<section id="services"><h2 class="title">Our Services</h2><div class="grid">
-<div class="card"><h3>Business & Registration</h3><ul><li>MSME Registration (GST Number ફરજિયાત)</li><li>GST Registration</li><li>Food Licence (FSSAI)</li><li>Udyam Registration</li><li>PAN / Aadhaar / Election Card</li><li>Ration Card & KYC</li></ul></div>
-<div class="card"><h3>Loan Services</h3><ul><li>Personal Loan</li><li>Home Loan</li><li>Business Loan</li><li>SBI Mudra Loan</li><li>Credit Card</li></ul></div>
-<div class="card"><h3>Government Services</h3><ul><li>Ayushman Card</li><li>E-Shram Card</li><li>Driving Licence</li><li>PF Services</li><li>7/12 & 8-A</li><li>ખેડૂતોના Forms</li><li>તમામ સરકારી Forms</li></ul></div>
-<div class="card"><h3>Other Services</h3><ul><li>Vehicle Insurance</li><li>Solar Fitting</li><li>Video Editing</li><li>અન્ય Online Services</li></ul></div>
-</div></section>
+<!-- SHOP SUMMARY / ABOUT SECTION -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-box">
+            <h3>🏢 ગણેશ એન્ટરપ્રાઇઝ વિશે (Digital Service Center Profile)</h3>
+            <p><strong>ગણેશ એન્ટરપ્રાઇઝ</strong> એ રાજુલા અને મહુવા પંથકમાં કાર્યરત એક અત્યાધુનિક અને વિશ્વસનીય ડિજિટલ સુવિધા કેન્દ્ર છે. અમારો મુખ્ય ઉદ્દેશ સામાન્ય નાગરિકો, વિદ્યાર્થીઓ, વેપારીઓ અને ખેડૂત મિત્રોને તમામ સરકારી, બેંકિંગ, લોન તેમજ ડિજિટલ સેવાઓ એક જ છત નીચે સચોટ, ઝડપી અને પારદર્શક રીતે પૂરી પાડવાનો છે.</p>
+            
+            <div class="about-features">
+                <div class="about-item">⚡ 100% સચોટ અને ઝડપી ઓનલાઇન વર્ક</div>
+                <div class="about-item">🤝 વ્યક્તિગત માર્ગદર્શન અને પારદર્શિતા</div>
+                <div class="about-item">📍 રાજુલા અને મહુવા બંને સ્થળે સુવિધા</div>
+            </div>
+        </div>
 
-<section id="students"><h2 class="title">Student Services & Required Documents</h2><div class="grid">
-<div class="card"><h3>🎓 Scholarship Form</h3><p>Aadhaar, Bank Passbook, Income Certificate, Caste Certificate (લાગુ પડે તો), Bonafide, Marksheet, Fee Receipt, Photo.</p></div>
-<div class="card"><h3>🏫 RTE Admission</h3><p>Birth Certificate, બાળક/વાલી Aadhaar, Address Proof, Income/Category Certificate (લાગુ પડે તો), Photo તથા supporting documents.</p></div>
-<div class="card"><h3>📚 College Admission</h3><p>Aadhaar, 10th/12th Marksheet, School Leaving Certificate, Photo, Caste/EWS/Income Certificate (લાગુ પડે તો), Migration Certificate (જરૂર મુજબ).</p></div>
-<div class="card"><h3>📝 Exam Form</h3><p>Aadhaar, Registration/Enrollment details, Previous Marksheet, Photo, Signature, Mobile Number અને જરૂરી fee details.</p></div>
-</div><p style="margin-top:18px;text-align:center"><b>નોંધ:</b> Documentsની ચોક્કસ જરૂરિયાત form, scheme અને official rules પ્રમાણે બદલાઈ શકે છે.</p></section>
+        <div class="benefits">
+            <div class="benefit">
+                <strong>👧 વ્હાલી દીકરી યોજના</strong>
+                <span>સંપૂર્ણ અરજી સહાય</span>
+            </div>
+            <div class="benefit">
+                <strong>🚗 વાહન લોન & વીમો</strong>
+                <span>કોમર્શિયલ અને પર્સનલ ગાડીઓ</span>
+            </div>
+            <div class="benefit">
+                <strong>💳 ક્રેડિટ કાર્ડ સેવા</strong>
+                <span>સ્વાઇપ, કેશ ઉપાડ અને બિલ</span>
+            </div>
+            <div class="benefit">
+                <strong>🌾 ખેડૂત સેવા</strong>
+                <span>i-Khedut અને સહાય યોજના</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-<section id="offices"><h2 class="title">Our Offices</h2><div class="grid">
-<div class="office"><h3>Ganesh Enterprise — Rajula</h3><p>Dandev Complex, Police Stationની સામે, Rajula – 365560</p><p>📞 <a href="tel:7096808048">7096808048</a> &nbsp; <a href="tel:9313471255">9313471255</a></p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Dandev+Complex+Police+Station+Rajula+Gujarat">Get Directions</a></div>
-<div class="office"><h3>Ganesh Online — Mahuva</h3><p>Panchvati Complex, Gandhibaug, Mahuva – 364290</p><p>📞 <a href="tel:7359404344">7359404344</a> &nbsp; <a href="tel:9081587886">9081587886</a></p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Panchvati+Complex+Gandhibaug+Mahuva+Gujarat">Get Directions</a></div>
-</div></section>
-</main>
-<footer>© 2026 Ganesh Enterprise / Ganesh Online. All Rights Reserved.</footer>
-<button class="back" onclick="history.back()">⬅ Back</button>
-</body></html>
+<!-- VACANCIES -->
+<section class="section section-white" id="vacancies">
+    <div class="container">
+        <div class="section-heading">
+            <h2>📢 સરકારી ભરતી અને ભરતી અપડેટ્સ</h2>
+            <p>લાયકાત, જરૂરી દસ્તાવેજો અને અરજીની માહિતી મેળવો.</p>
+        </div>
+
+        <div class="notice">
+            <strong>મહત્વપૂર્ણ:</strong> તમામ તાજી સરકારી નોકરીઓની અધિકૃત વિગતો જોવા માટે નીચે આપેલ લિંક પર ક્લિક કરી શકો છો.
+        </div>
+
+        <h3 style="color:#102c52;margin-bottom:12px;">🟢 Live Vacancies</h3>
+        <div class="vacancy-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ભરતીનું નામ</th>
+                        <th>લાયકાત</th>
+                        <th>સ્થિતિ</th>
+                        <th>ઓનલાઇન ચેક / Inquiry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>લેટેસ્ટ સરકારી ભરતીઓ (All Govt Jobs)</td>
+                        <td>૧૦મું, ૧૨મું, ગ્રેજ્યુએટ (જાહેરાત મુજબ)</td>
+                        <td><span class="badge badge-live">Live Updates</span></td>
+                        <td>
+                            <div class="table-btn-group">
+                                <a href="https://www.indgovtjobs.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                    🔍 ચેક કરો (Official Link)
+                                </a>
+                                <button class="btn btn-blue" onclick="openInquiry('Live સરકારી ભરતી')">
+                                    Inquiry
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="color:#102c52;margin:30px 0 12px;">🟡 Upcoming Vacancies</h3>
+        <div class="vacancy-table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ભરતીની માહિતી</th>
+                        <th>લાયકાત</th>
+                        <th>સ્થિતિ</th>
+                        <th>Inquiry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>આવનારી સરકારી ભરતી (Upcoming Jobs)</td>
+                        <td>સત્તાવાર જાહેરાત મુજબ</td>
+                        <td><span class="badge badge-upcoming">Upcoming</span></td>
+                        <td>
+                            <button class="btn btn-blue" onclick="openInquiry('Upcoming સરકારી ભરતી')">Inquiry</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- VAHALI DIKRI YOJNA (NEW SECTION) -->
+<section class="section" id="yojna">
+    <div class="container">
+        <div class="section-heading">
+            <h2>👧 મહિલા & બાળ કલ્યાણ યોજના</h2>
+            <p>ગુજરાત સરકારની દીકરીઓ માટેની કલ્યાણકારી યોજનાઓનું માર્ગદર્શન.</p>
+        </div>
+
+        <div class="grid grid-2">
+            <!-- Vahali Dikri Yojna Card -->
+            <article class="card" onclick="cardClick(event, 'વ્હાલી દીકરી યોજના')">
+                <div class="card-icon">🌸</div>
+                <h3>વ્હાલી દીકરી યોજના</h3>
+                <p class="loan-note">દીકરીના ઉજ્જવળ ભવિષ્ય માટે સરકાર તરફથી કુલ ₹1,10,000 સુધીની આર્થિક સહાય.</p>
+                <ul>
+                    <li>ધોરણ-1 માં પ્રવેશ વખતે: ₹4,000 સહાય</li>
+                    <li>ધોરણ-9 માં પ્રવેશ વખતે: ₹6,000 સહાય</li>
+                    <li>૧૮ વર્ષની ઉંમરે ઉચ્ચ શિક્ષણ/લગ્ન સહાય: ₹1,00,000</li>
+                    <li>ઓનલાઇન અરજી, ડોક્યુમેન્ટ વેરિફિકેશન અને સ્ટેટસ ચેક</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('વ્હાલી દીકરી યોજના')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('વ્હાલી દીકરી યોજના')">Inquiry</button>
+                </div>
+            </article>
+
+            <!-- Sukanya Samriddhi & Other Girl Child Schemes -->
+            <article class="card" onclick="cardClick(event, 'સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">
+                <div class="card-icon">🏦</div>
+                <h3>સુકન્યા સમૃદ્ધિ યોજના</h3>
+                <p class="loan-note">દીકરી માટે ઉચ્ચ વ્યાજદર અને ટેક્સ ફ્રી બચત ખાતું ખોલાવવા માર્ગદર્શન.</p>
+                <ul>
+                    <li>પોસ્ટ ઓફિસ / બેંક ખાતું ખોલાવવા ફોર્મ સહાય</li>
+                    <li>દીકરીના જન્મથી ૧૦ વર્ષ સુધી ખાતું ખોલાવી શકાય</li>
+                    <li>સરકારી સુરક્ષિત રોકાણ યોજના માહિતી</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- VEHICLE LOAN & INSURANCE -->
+<section class="section section-white" id="vehicle">
+    <div class="container">
+        <div class="section-heading">
+            <h2>🚗 વાહન લોન અને ઇન્સ્યોરન્સ સુવિધાઓ (Vehicle Services)</h2>
+            <p>ટ્રાન્સપોર્ટેશન વાહનો અને અંગત વાહનો માટે લોન તથા વીમાની સંપૂર્ણ સેવા.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" onclick="cardClick(event, 'કોમર્શિયલ વાહન લોન અને વીમો')">
+                <div class="card-icon">🚛</div>
+                <h3>ટ્રાન્સપોર્ટેશન વાહન (Commercial)</h3>
+                <p class="loan-note">ટ્રક, આઇશર, લોડિંગ રિક્ષા, ટ્રેલર, બસ અને ટેક્સી માટે લોન અને વીમો.</p>
+                <ul>
+                    <li>નવા/જૂના કોમર્શિયલ વાહન માટે લોન</li>
+                    <li>હેવી વાહન ફૂલ ઇન્સ્યોરન્સ અને થર્ડ પાર્ટી વીમો</li>
+                    <li>નેશનલ પરમિટ & ફિટનેસ પેપર સહાય</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('કોમર્શિયલ વાહન લોન અને વીમો')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('કોમર્શિયલ વાહન લોન અને વીમો')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'પર્સનલ વાહન લોન અને વીમો')">
+                <div class="card-icon">🚘</div>
+                <h3>અંગત વાહન (Personal Vehicle)</h3>
+                <p class="loan-note">કાર, બાઇક અને મોપેડ સ્કૂટર માટે સસ્તા વ્યાજદરે લોન અને વીમો.</p>
+                <ul>
+                    <li>નવી/જૂની ફોર-વ્હીલર કાર લોન પ્રોસેસિંગ</li>
+                    <li>ટુ-વ્હીલર બાઇક/સ્કૂટર ફાઇનાન્સ</li>
+                    <li>તાત્કાલિક ઝીરો ડેપ (Zero-Dep) વીમા પોલિસી</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('પર્સનલ વાહન લોન અને વીમો')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('પર્સનલ વાહન લોન અને વીમો')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'વાહન વીમો અને પોલિસી રીન્યુઅલ')">
+                <div class="card-icon">🛡️</div>
+                <h3>વાહન વીમો અને રીન્યુઅલ</h3>
+                <p class="loan-note">કોઈપણ વાહનનો વીમો માત્ર ૫ મિનિટમાં રીન્યુ કરાવો.</p>
+                <ul>
+                    <li>એક્સપાયર થયેલ વીમાનું ઝડપી રીન્યુઅલ</li>
+                    <li>ક્લેમ સપોર્ટ અને માર્ગદર્શન</li>
+                    <li>વાહન માલિકી ફેરબદલ (RC Transfer) વીમો</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('વાહન વીમો અને પોલિસી રીન્યુઅલ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('વાહન વીમો અને પોલિસી રીન્યુઅલ')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- AADHAAR & PAN -->
+<section class="section" id="aadhaar">
+    <div class="container">
+        <div class="section-heading">
+            <h2>🪪 આધાર કાર્ડ અને PAN કાર્ડ સુવિધા</h2>
+            <p>કાર્ડ, લિંકિંગ અને સુધારાની માહિતી મેળવો.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" onclick="cardClick(event, 'આધાર-PAN લિંકિંગ')">
+                <div class="card-icon">🔗</div>
+                <h3>આધાર-PAN લિંકિંગ</h3>
+                <ul>
+                    <li>આધાર-PAN લિંકિંગ પ્રોસેસ</li>
+                    <li>લિંકિંગ સ્ટેટસ ચકાસણી</li>
+                    <li>ડેમોગ્રાફિક ડેટા સુધારો</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('આધાર-PAN લિંકિંગ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('આધાર-PAN લિંકિંગ')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'PAN કાર્ડ સેવા')">
+                <div class="card-icon">🪪</div>
+                <h3>PAN કાર્ડ સેવા</h3>
+                <ul>
+                    <li>નવું PAN કાર્ડ (New PAN)</li>
+                    <li>નામ/જન્મતારીખમાં સુધારો</li>
+                    <li>e-PAN ડાઉનલોડ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('PAN કાર્ડ સેવા')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('PAN કાર્ડ સેવા')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'ચૂંટણી કાર્ડ અને રેશન કાર્ડ')">
+                <div class="card-icon">🗳️</div>
+                <h3>ચૂંટણી કાર્ડ & રેશન કાર્ડ</h3>
+                <ul>
+                    <li>મતદાર ઓળખપત્ર (Voter ID)</li>
+                    <li>રેશન કાર્ડ e-KYC સુવિધા</li>
+                    <li>નામ ઉમેરવા/કમી કરવાની અરજી</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('ચૂંટણી કાર્ડ અને રેશન કાર્ડ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('ચૂંટણી કાર્ડ અને રેશન કાર્ડ')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT -->
+<section class="section section-white" id="student">
+    <div class="container">
+        <div class="section-heading">
+            <h2>🎓 વિદ્યાર્થી ફોર્મ અને સ્કોલરશિપ</h2>
+            <p>શાળા અને કોલેજના વિદ્યાર્થીઓ માટે ઓનલાઇન શૈક્ષણિક સેવાઓ.</p>
+        </div>
+
+        <div class="grid grid-2">
+            <article class="card" onclick="cardClick(event, 'એડમિશન અને પરીક્ષા ફોર્મ')">
+                <div class="card-icon">🎓</div>
+                <h3>એડમિશન & પરીક્ષા ફોર્મ</h3>
+                <ul>
+                    <li>GCAS કોલેજ એડમિશન રજિસ્ટ્રેશન</li>
+                    <li>યુનિવર્સિટી પરીક્ષા ફોર્મ</li>
+                    <li>હોલ ટિકિટ અને પરિણામ ડાઉનલોડ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('એડમિશન અને પરીક્ષા ફોર્મ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('એડમિશન અને પરીક્ષા ફોર્મ')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'સ્કોલરશિપ સહાય')">
+                <div class="card-icon">📚</div>
+                <h3>સ્કોલરશિપ સહાય</h3>
+                <ul>
+                    <li>ડિજિટલ ગુજરાત સ્કોલરશિપ (11th, 12th, કોલેજ)</li>
+                    <li>MYSY સ્કોલરશિપ યોજના</li>
+                    <li>રિન્યુઅલ અને સ્ટેટસ ટ્રેકિંગ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('સ્કોલરશિપ સહાય')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('સ્કોલરશિપ સહાય')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- LOANS & CREDIT CARDS -->
+<section class="section" id="loans">
+    <div class="container">
+        <div class="section-heading">
+            <h2>💳 ક્રેડિટ કાર્ડ અને સામાન્ય લોન સુવિધાઓ</h2>
+            <p>ક્રેડિટ કાર્ડ સ્વાઇપ, કેશ ઉપાડ, બિલ પેમેન્ટ અને સરકારી બિઝનેસ લોન સહાય.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" onclick="cardClick(event, 'ક્રેડિટ કાર્ડ સુવિધા')">
+                <div class="card-icon">💳</div>
+                <h3>ક્રેડિટ કાર્ડ સુવિધા</h3>
+                <p class="loan-note">ક્રેડિટ કાર્ડ સ્વાઇપ, તાત્કાલિક રોકડ ઉપાડ અને બિલ ભરવાની સુવિધા.</p>
+                <ul>
+                    <li>ક્રેડિટ કાર્ડ સ્વાઇપ સુવિધા (Credit Card Swipe)</li>
+                    <li>ક્રેડિટ કાર્ડ કેશ ઉપાડ (Cash Withdrawal)</li>
+                    <li>ક્રેડિટ કાર્ડ બિલ પેમેન્ટ (Bill Payment)</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('ક્રેડિટ કાર્ડ સુવિધા')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('ક્રેડિટ કાર્ડ સુવિધા')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'મુદ્રા અને બિઝનેસ લોન')">
+                <div class="card-icon">🏪</div>
+                <h3>મુદ્રા અને બિઝનેસ લોન</h3>
+                <p class="loan-note">વેપાર અને ધંધાના વિકાસ માટે સબસિડીયુક્ત સરકારી લોન સહાય.</p>
+                <ul>
+                    <li>PMMY મુદ્રા લોન યોજના</li>
+                    <li>PMEGP સબસિડી લોન પ્રોજેક્ટ</li>
+                    <li>પ્રોજેક્ટ રિપોર્ટ અને પેપરવર્ક</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('મુદ્રા અને બિઝનેસ લોન')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('મુદ્રા અને બિઝનેસ લોન')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'પર્સનલ અને હોમ લોન')">
+                <div class="card-icon">🏠</div>
+                <h3>પર્સનલ અને હોમ લોન</h3>
+                <p class="loan-note">મકાન ખરીદી, રીનોવેશન કે અંગત જરૂરિયાત માટે યોગ્ય માર્ગદર્શન.</p>
+                <ul>
+                    <li>હોમ લોન અને મોર્ગેજ લોન</li>
+                    <li>પર્સનલ લોન સહાય</li>
+                    <li>બેંક ફાઇલિંગ અને પ્રોસેસિંગ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('પર્સનલ અને હોમ લોન')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('પર્સનલ અને હોમ લોન')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FARMER -->
+<section class="section section-white" id="farmer">
+    <div class="container">
+        <div class="section-heading">
+            <h2>🌾 ખેડૂત કલ્યાણ સુવિધાઓ</h2>
+            <p>i-Khedut પોર્ટલ અને કૃષિ યોજનાઓની ઓનલાઇન સેવાઓ.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" onclick="cardClick(event, 'i-Khedut પોર્ટલ અરજી')">
+                <div class="card-icon">🌱</div>
+                <h3>i-Khedut પોર્ટલ અરજી</h3>
+                <ul>
+                    <li>ખેતી સાધન સહાય અરજી</li>
+                    <li>તાર ફેન્સિંગ અને પાણીના ટાંકા સહાય</li>
+                    <li>ડ્રિપ ઇરિગેશન સબસિડી અરજી</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('i-Khedut પોર્ટલ અરજી')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('i-Khedut પોર્ટલ અરજી')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'PM કિસાન સન્માન નિધિ')">
+                <div class="card-icon">💰</div>
+                <h3>PM કિસાન સન્માન નિધિ</h3>
+                <ul>
+                    <li>નવી ખેડૂત નોંધણી</li>
+                    <li>PM કિસાન બાયોમેટ્રિક / OTP e-KYC</li>
+                    <li>હપ્તા સ્ટેટસ અને બેંક લિંકિંગ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('PM કિસાન સન્માન નિધિ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('PM કિસાન સન્માન નિધિ')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'જમીન રેકોર્ડ્સ (AnyRoR)')">
+                <div class="card-icon">📑</div>
+                <h3>જમીન રેકોર્ડ્સ (AnyRoR)</h3>
+                <ul>
+                    <li>૭/૧૨ અને ૮-અ નકલ ડાઉનલોડ</li>
+                    <li>હક્કપત્રક નોંધ (ગા.ન. નં. ૬)</li>
+                    <li>ડિજિટલ સાઈન વાળી જમીનની નકલ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('જમીન રેકોર્ડ્સ (AnyRoR)')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('જમીન રેકોર્ડ્સ (AnyRoR)')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- BUSINESS MSME GST -->
+<section class="section" id="business">
+    <div class="container">
+        <div class="section-heading">
+            <h2>💼 MSME અને વેપારી સેવાઓ</h2>
+            <p>નાના-મોટા વેપારીઓ માટે સરકારી રજિસ્ટ્રેશન સેવા.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card" onclick="cardClick(event, 'ઉદ્યમ રજિસ્ટ્રેશન (MSME)')">
+                <div class="card-icon">🏢</div>
+                <h3>ઉદ્યમ રજિસ્ટ્રેશન (MSME)</h3>
+                <ul>
+                    <li>નવું MSME ઉદ્યમ પ્રમાણપત્ર</li>
+                    <li>ઉદ્યમ સર્ટિફિકેટમાં સુધારો</li>
+                    <li>સરકારી યોજના લાભો માટે સહાય</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('ઉદ્યમ રજિસ્ટ્રેશન (MSME)')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('ઉદ્યમ રજિસ્ટ્રેશન (MSME)')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'GST સુવિધાઓ')">
+                <div class="card-icon">🧾</div>
+                <h3>GST સુવિધાઓ</h3>
+                <ul>
+                    <li>નવું GST રજિસ્ટ્રેશન</li>
+                    <li>GST રિટર્ન ફાઇલિંગ સહાય</li>
+                    <li>GST સંબંધી સામાન્ય સુધારાઓ</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('GST સુવિધાઓ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('GST સુવિધાઓ')">Inquiry</button>
+                </div>
+            </article>
+
+            <article class="card" onclick="cardClick(event, 'ગુમાસ્તા અને ફૂડ લાયસન્સ')">
+                <div class="card-icon">📄</div>
+                <h3>ગુમાસ્તા & ફૂડ લાયસન્સ</h3>
+                <ul>
+                    <li>ગુમાસ્તા ધારો / શોપ એક્ટ</li>
+                    <li>ફૂડ લાયસન્સ (FSSAI) નોંધણી</li>
+                    <li>ડિજિટલ સિગ્નેચર (DSC)</li>
+                </ul>
+                <div class="card-actions">
+                    <button class="btn btn-light" onclick="showDocuments('ગુમાસ્તા અને ફૂડ લાયસન્સ')">Documents</button>
+                    <button class="btn btn-blue" onclick="openInquiry('ગુમાસ્તા અને ફૂડ લાયસન્સ')">Inquiry</button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h3>ગણેશ એન્ટરપ્રાઇઝ</h3>
+            <p>ડિજિટલ સેવા કેન્દ્ર</p>
+            <p style="margin-top: 10px;">તમામ ઓનલાઈન ફોર્મ, વ્હાલી દીકરી યોજના, વાહન લોન અને વીમો, ક્રેડિટ કાર્ડ સ્વાઇપ-ઉપાડ અને સરકારી યોજનાઓ માટે વિશ્વાસપાત્ર કેન્દ્ર.</p>
+            <p style="margin-top: 8px; color: #ffdb8c;">🕒 સમય: સવારે 9:00 થી સાંજે 8:00</p>
+        </div>
+
+        <div>
+            <h3>ઓફિસ સરનામું & સંપર્ક</h3>
+            
+            <div class="branch-box">
+                <span class="branch-title">📍 રાજુલા શાખા:</span>
+                <p>દાનદેવ કોમ્પલેક્ષ, પોલીસ સ્ટેશનની સામેના ખાંચામાં, રાજુલા, અમરેલી 365560</p>
+                <p>📞 હરકિશનભાઈ: 9313471255 | પાર્થિવભાઈ: 7096808048</p>
+            </div>
+
+            <div class="branch-box">
+                <span class="branch-title">📍 મહુવા શાખા:</span>
+                <p>પંચવટી કોમ્પલેક્ષ, ગાંધીબાગ, મહુવા, ભાવનગર 364290</p>
+                <p>📞 ગૌતમભાઈ: 7359404344 | પાર્થિવભાઈ: 9081587886</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>ઝડપી લિંક્સ</h3>
+            <p><a href="#yojna">વ્હાલી દીકરી યોજના</a></p>
+            <p><a href="#vehicle">વાહન લોન & ઇન્સ્યોરન્સ</a></p>
+            <p><a href="#aadhaar">આધાર અને PAN કાર્ડ સેવા</a></p>
+            <p><a href="#loans">ક્રેડિટ કાર્ડ & લોન સહાય</a></p>
+            <p><a href="#student">વિદ્યાર્થી સ્કોલરશિપ</a></p>
+        </div>
+    </div>
+
+    <div class="container footer-bottom">
+        <p>© 2026 ગણેશ એન્ટરપ્રાઇઝ. સર્વ હક સુરક્ષિત.</p>
+    </div>
+</footer>
+
+<!-- MODAL POPUP -->
+<div class="modal" id="infoModal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3 id="modalTitle">વિગતવાર માહિતી</h3>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+
+        <!-- DOCUMENTS VIEW -->
+        <div id="modalContent">
+            <ul class="doc-list" id="docList"></ul>
+            <div class="modal-actions">
+                <button class="btn btn-blue" id="modalInquiryBtn">આ સેવા માટે Inquiry કરો</button>
+            </div>
+            <!-- Back Button at bottom -->
+            <div class="modal-bottom-back">
+                <button class="modal-back-btn" onclick="closeModal()">← પાછળ (Back)</button>
+            </div>
+        </div>
+
+        <!-- INQUIRY FORM VIEW -->
+        <div id="inquiryFormView" style="display: none;">
+            <form onsubmit="handleFormSubmit(event)" novalidate>
+                <!-- NAME INPUT -->
+                <div class="form-group">
+                    <label for="userName">તમારું પૂરું નામ:</label>
+                    <input 
+                        type="text" 
+                        id="userName" 
+                        placeholder="નામ દાખલ કરો (માત્ર અક્ષરો)" 
+                        required 
+                        autocomplete="off"
+                        oninput="validateNameInput(this)">
+                    <div id="nameError" class="validation-error">કૃપા કરીને માત્ર સાચા અક્ષરો (નામ) લખો, નંબર નહીં.</div>
+                </div>
+
+                <!-- PHONE INPUT -->
+                <div class="form-group">
+                    <label for="userPhone">મોબાઇલ નંબર:</label>
+                    <input 
+                        type="tel" 
+                        id="userPhone" 
+                        placeholder="10 આંકડાનો મોબાઇલ નંબર" 
+                        required 
+                        maxlength="10"
+                        autocomplete="off"
+                        oninput="validatePhoneInput(this)">
+                    <div id="phoneError" class="validation-error">કૃપા કરીને બરાબર ૧૦ આંકડાનો સાચો મોબાઇલ નંબર દાખલ કરો.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="branchSelect">કઈ શાખાનો સંપર્ક કરવો છે? (Branch):</label>
+                    <select id="branchSelect" onchange="updateContactPersons()" required>
+                        <option value="rajula">રાજુલા શાખા (દાનદેવ કોમ્પલેક્ષ)</option>
+                        <option value="mahuva">મહુવા શાખા (પંચવટી કોમ્પલેક્ષ)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPersonSelect">કોને મેસેજ મોકલવો છે? (Contact Person):</label>
+                    <select id="contactPersonSelect" required>
+                        <!-- JavaScript દ્વારા આપમેળે ભરાશે -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="selectedService">સેવા / વિષય:</label>
+                    <input type="text" id="selectedService" readonly>
+                </div>
+
+                <p class="form-hint">* આ ફોર્મ સબમિટ કરવાથી પસંદ કરેલા નંબર પર સીધો WhatsApp મેસેજ તૈયાર થશે.</p>
+                <button type="submit" class="whatsapp-btn">💬 WhatsApp પર મોકલો</button>
+
+                <!-- Back Button at bottom -->
+                <div class="modal-bottom-back">
+                    <button type="button" class="modal-back-btn" onclick="backToDocumentsOrClose()">← પાછળ (Back)</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+// જરૂરી દસ્તાવેજોની યાદી
+const serviceDocuments = {
+    // Vahali Dikri & Girl Schemes
+    'વ્હાલી દીકરી યોજના': [
+        'દીકરીનો જન્મ દાખલો (Birth Certificate)',
+        'માતા અને પિતાનું આધાર કાર્ડ',
+        'માતા-પિતાના લગ્ન નોંધણી પ્રમાણપત્ર (મેરેજ સર્ટિફિકેટ)',
+        'સક્ષમ અધિકારીશ્રીનો આવકનો દાખલો (વાર્ષિક આવક મર્યાદા ₹2 લાખ સુધી)',
+        'દીકરી અથવા માતાના નામે રાષ્ટ્રીયકૃત બેંક પાસબુક પ્રથમ પાનું',
+        'રેશન કાર્ડ નકલ',
+        'માતા-પિતાનું નિયત નમૂનાનું સોગંદનામું (Affidavit)'
+    ],
+    'સુકન્યા સમૃદ્ધિ યોજના માર્ગદર્શન': [
+        'દીકરીનો જન્મ દાખલો',
+        'વાલી/માતા-પિતાનું ઓળખપત્ર (આધાર કાર્ડ, PAN કાર્ડ)',
+        'રહેઠાણનો પુરાવો (લાઇટબિલ/રેશન કાર્ડ)',
+        'વાલી અને બાળકીના પાસપોર્ટ સાઇઝ ફોટો'
+    ],
+
+    // Aadhaar & PAN
+    'આધાર-PAN લિંકિંગ': ['આધાર કાર્ડ નકલ', 'PAN કાર્ડ નકલ', 'લિંક થયેલ મોબાઇલ નંબર'],
+    'PAN કાર્ડ સેવા': ['ઓળખનો પુરાવો (આધાર કાર્ડ)', 'જન્મ તારીખનો પુરાવો', 'પાસપોર્ટ સાઇઝ ફોટો (૨ નકલ)', 'સહીનો નમૂનો'],
+    'ચૂંટણી કાર્ડ અને રેશન કાર્ડ': ['આધાર કાર્ડ', 'રેશન કાર્ડ', 'પાસપોર્ટ સાઇઝ ફોટો', 'સરનામાનો પુરાવો'],
+    
+    // Students
+    'એડમિશન અને પરીક્ષા ફોર્મ': ['અગાઉની માર્કશીટ (10th/12th/Semesters)', 'LC / શાળા છોડ્યાનું પ્રમાણપત્ર', 'જાતિનો દાખલો (જો લાગુ પડે તો)', 'પાસપોર્ટ સાઇઝ ફોટો'],
+    'સ્કોલરશિપ સહાય': ['આધાર કાર્ડ', 'કોલેજ/શાળા ફી પહોંચ', 'બોનાફાઇડ સર્ટિફિકેટ', 'આવકનો દાખલો', 'બેંક પાસબુક', 'છેલ્લી માર્કશીટ'],
+    
+    // Vehicle Documents
+    'કોમર્શિયલ વાહન લોન અને વીમો': [
+        'RC બુક (વાહન રજિસ્ટ્રેશન)',
+        'જૂની વીમા પોલિસી (જો રીન્યુઅલ હોય તો)',
+        'વાહન માલિકનું આધાર કાર્ડ અને PAN કાર્ડ',
+        'ડ્રાઇવિંગ લાયસન્સ (Heavy/Commercial)',
+        'બેંક સ્ટેટમેન્ટ (છેલ્લા 6 મહિના - લોન માટે)',
+        'વાહનની ફિટનેસ & પરમિટ નકલ'
+    ],
+    'પર્સનલ વાહન લોન અને વીમો': [
+        'RC બુક (કાર/બાઇક)',
+        'અગાઉની વીમા પોલિસી નકલ',
+        'આધાર કાર્ડ અને PAN કાર્ડ',
+        'ડ્રાઇવિંગ લાયસન્સ',
+        'બેંક સ્ટેટમેન્ટ / સેલરી સ્લિપ (લોન પ્રોસેસ માટે)'
+    ],
+    'વાહન વીમો અને પોલિસી રીન્યુઅલ': [
+        'RC બુક નકલ (આગળ-પાછળ)',
+        'છેલ્લી એક્સપાયર થયેલ પોલિસી',
+        'વાહન માલિકનું નામ અને મોબાઈલ નંબર'
+    ],
+
+    // Loans & Credit Cards
+    'ક્રેડિટ કાર્ડ સુવિધા': [
+        'અસલ ક્રેડિટ કાર્ડ (Original Physical Card)',
+        'કાર્ડધારકનું આધાર કાર્ડ / PAN કાર્ડ',
+        'કાર્ડ સાથે લિંક થયેલ મોબાઇલ નંબર (OTP માટે)',
+        'બેંક એકાઉન્ટ વિગત (કેશ ટ્રાન્સફર / ચૂકવણી માટે)'
+    ],
+    'મુદ્રા અને બિઝનેસ લોન': ['આધાર કાર્ડ અને PAN કાર્ડ', 'છેલ્લા 6 મહિનાનું બેંક સ્ટેટમેન્ટ', 'વ્યવસાય નોંધણી (ઉદ્યમ સર્ટિફિકેટ)', 'પાસપોર્ટ સાઇઝ ફોટો'],
+    'પર્સનલ અને હોમ લોન': ['આધાર અને PAN કાર્ડ', 'આવકનો પુરાવો (ITR / પગાર સ્લિપ)', 'બેંક સ્ટેટમેન્ટ (6 મહિના)', 'મકાન દસ્તાવેજ (હોમ લોન માટે)'],
+    
+    // Farmer
+    'i-Khedut પોર્ટલ અરજી': ['૭/૧૨ અને ૮-અ જમીનની નકલ', 'આધાર કાર્ડ', 'બેંક પાસબુક પ્રથમ પાનું'],
+    'PM કિસાન સન્માન નિધિ': ['જમીન ૭/૧૨ અને ૮-અ', 'આધાર કાર્ડ', 'બેંક પાસબુક', 'મોબાઇલ નંબર'],
+    'જમીન રેકોર્ડ્સ (AnyRoR)': ['ખાતા નંબર અથવા સર્વે નંબર', 'ગામ અને તાલુકાનું નામ'],
+    
+    // MSME & GST
+    'ઉદ્યમ રજિસ્ટ્રેશન (MSME)': ['માલિકનું આધાર કાર્ડ', 'PAN કાર્ડ', 'બેંક ખાતા નંબર અને IFSC', 'ધંધાનું નામ અને શરૂ તારીખ'],
+    'GST સુવિધાઓ': ['PAN કાર્ડ અને આધાર કાર્ડ', 'દુકાન ભાડા કરાર / લાઇટબિલ', 'કેન્સલ ચેક / પાસબુક', 'પાસપોર્ટ સાઇઝ ફોટો'],
+    'ગુમાસ્તા અને ફૂડ લાયસન્સ': ['આધાર કાર્ડ', 'દુકાન માલિકી પુરાવો', 'પાસપોર્ટ સાઇઝ ફોટો']
+};
+
+// શાખા મુજબ સંપર્ક વ્યક્તિઓ
+const branchContacts = {
+    rajula: [
+        { name: 'હરકિશનભાઈ (9313471255)', phone: '9313471255' },
+        { name: 'પાર્થિવભાઈ (7096808048)', phone: '7096808048' }
+    ],
+    mahuva: [
+        { name: 'ગૌતમભાઈ (7359404344)', phone: '7359404344' },
+        { name: 'પાર્થિવભાઈ (9081587886)', phone: '9081587886' }
+    ]
+};
+
+let previousModalState = null;
+
+// NAME VALIDATION: અંગ્રેજી, ગુજરાતી અને માત્ર સ્પેસ જ એલોવ કરવી (નંબર ટાઇપ નહીં થાય)
+function validateNameInput(input) {
+    input.value = input.value.replace(/[^a-zA-Z\u0A80-\u0AFF\s]/g, '');
+    const nameError = document.getElementById('nameError');
+    if (input.value.trim().length === 0) {
+        nameError.style.display = 'block';
+    } else {
+        nameError.style.display = 'none';
+    }
+}
+
+// PHONE VALIDATION: માત્ર આંકડા જ એલોવ કરવા (આલ્ફાબેટ્સ નહીં)
+function validatePhoneInput(input) {
+    input.value = input.value.replace(/\D/g, '');
+    const phoneError = document.getElementById('phoneError');
+    if (input.value.length === 10) {
+        phoneError.style.display = 'none';
+    }
+}
+
+function updateContactPersons() {
+    const branchSelect = document.getElementById('branchSelect');
+    const contactPersonSelect = document.getElementById('contactPersonSelect');
+    const selectedBranch = branchSelect.value;
+    
+    contactPersonSelect.innerHTML = '';
+    const contacts = branchContacts[selectedBranch] || [];
+    contacts.forEach(contact => {
+        const option = document.createElement('option');
+        option.value = contact.phone;
+        option.textContent = contact.name;
+        contactPersonSelect.appendChild(option);
+    });
+}
+
+function cardClick(event, serviceName) {
+    if (event.target.tagName.toLowerCase() === 'button' || event.target.tagName.toLowerCase() === 'a') {
+        return;
+    }
+    showDocuments(serviceName);
+}
+
+function showDocuments(serviceName) {
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const docList = document.getElementById('docList');
+    const modalContent = document.getElementById('modalContent');
+    const inquiryFormView = document.getElementById('inquiryFormView');
+    const modalInquiryBtn = document.getElementById('modalInquiryBtn');
+
+    previousModalState = null;
+    modalTitle.innerText = serviceName + ' - જરૂરી દસ્તાવેજો';
+    docList.innerHTML = '';
+
+    const docs = serviceDocuments[serviceName] || ['આધાર કાર્ડ', 'પાસપોર્ટ સાઇઝ ફોટો', 'સંબંધિત કાગળો'];
+    docs.forEach(doc => {
+        const li = document.createElement('li');
+        li.innerText = doc;
+        docList.appendChild(li);
+    });
+
+    modalInquiryBtn.onclick = () => {
+        previousModalState = serviceName;
+        openInquiry(serviceName);
+    };
+
+    modalContent.style.display = 'block';
+    inquiryFormView.style.display = 'none';
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+}
+
+function openInquiry(serviceName) {
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+    const inquiryFormView = document.getElementById('inquiryFormView');
+    const selectedServiceInput = document.getElementById('selectedService');
+
+    modalTitle.innerText = 'Inquiry / પૂછપરછ ફોર્મ';
+    selectedServiceInput.value = serviceName || 'સામાન્ય પૂછપરછ';
+
+    // રીસેટ એરર મેસેજીસ
+    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('phoneError').style.display = 'none';
+
+    updateContactPersons();
+
+    modalContent.style.display = 'none';
+    inquiryFormView.style.display = 'block';
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+}
+
+function backToDocumentsOrClose() {
+    if (previousModalState) {
+        showDocuments(previousModalState);
+    } else {
+        closeModal();
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('infoModal');
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+    previousModalState = null;
+}
+
+// બહાર ક્લિક કરવાથી પૉપઅપ બંધ ન થાય તે માટે window.onclick હટાવી દીધું છે.
+// હવે માત્ર બેક બટન કે Close (X) પર ક્લિક કરવાથી જ બંધ થશે.
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const nameInput = document.getElementById('userName');
+    const phoneInput = document.getElementById('userPhone');
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    let isValid = true;
+
+    if (name.length < 2) {
+        nameError.style.display = 'block';
+        nameInput.focus();
+        isValid = false;
+    } else {
+        nameError.style.display = 'none';
+    }
+
+    if (phone.length !== 10) {
+        phoneError.style.display = 'block';
+        if (isValid) phoneInput.focus();
+        isValid = false;
+    } else {
+        phoneError.style.display = 'none';
+    }
+
+    if (!isValid) {
+        return; // ૧૦ આંકડા અને સાચું નામ ન હોય ત્યાં સુધી સબમિટ નહીં થાય
+    }
+
+    const branchSelect = document.getElementById('branchSelect');
+    const branchName = branchSelect.options[branchSelect.selectedIndex].text;
+    const targetPhone = document.getElementById('contactPersonSelect').value;
+    const contactPersonText = document.getElementById('contactPersonSelect').options[document.getElementById('contactPersonSelect').selectedIndex].text;
+    const service = document.getElementById('selectedService').value;
+
+    const message = `નમસ્તે ગણેશ એન્ટરપ્રાઇઝ,\n\nમારું નામ: ${name}\nમોબાઇલ: ${phone}\nશાખા: ${branchName}\nસંપર્ક: ${contactPersonText}\nસેવાની માહિતી: ${service}\n\nમને આ સેવા વિશે વિગતવાર માહિતી આપવા વિનંતી.`;
+    const whatsappUrl = `https://wa.me/91${targetPhone}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, '_blank');
+    closeModal();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateContactPersons();
+});
+</script>
+</body>
+</html>
